@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="Campaign"
+            type="io.bonat.customer_lib.data.model.Campaign" />
+
+        <import type="android.view.View" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/reward_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/_10sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:layout_weight=".4">
+
+                <com.joooonho.SelectableRoundedImageView
+                    android:id="@+id/ic_coupon_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_130sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerCrop"
+                    app:LoadCampaignImage="@{Campaign.imageUrl }"
+                    app:sriv_border_width="0dip"
+                    app:sriv_left_bottom_corner_radius="@dimen/_4sdp"
+                    app:sriv_left_top_corner_radius="@dimen/_4sdp"
+                    app:sriv_oval="false"
+                    app:sriv_right_bottom_corner_radius="@dimen/_4sdp"
+                    app:sriv_right_top_corner_radius="@dimen/_4sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_130sdp"
+                    android:visibility="@{Campaign.isLocked?View.VISIBLE:View.GONE}">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:visibility="visible"
+                        app:srcCompat="@drawable/bg_mask" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/_44sdp"
+                        android:layout_height="@dimen/_35sdp"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/ic_lock_reward" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".6"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/campaign_point_price"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:background="@{Campaign.isLocked?@drawable/radius_e76862_20:@drawable/radius_f6a93b_20}"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="@{Campaign.pointPrice + ` ` +@string/point}"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/campaign_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/campaign_point_price"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_medium"
+                    android:maxLines="2"
+                    android:text="@{Campaign.title}"
+                    android:textColor="@color/color_010101"
+                    android:textSize="@dimen/_11sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/campaign_title"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:visibility="gone"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ic_expired" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_2sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/expired_on"
+                        android:textColor="@color/color_010101"
+                        android:textSize="@dimen/_8sdp" />
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/expired_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_3sdp"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Mar 13, 2021 8:40 AM"
+                        android:textColor="@color/color_E76862"
+                        android:textSize="@dimen/_8sdp" />
+
+                    <!--    <View
+                            android:layout_width="1dp"
+                            android:layout_height="@dimen/_8sdp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_2sdp"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:background="@color/color_ff6645" />
+
+                        <io.bonat.customerapp.font.MontserratMediumBahijSemiBold
+                            android:id="@+id/expired_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:text="08:50"
+                            android:textColor="@color/color_ff6645"
+                            android:textSize="@dimen/_8sdp" />-->
+                </LinearLayout>
+
+                <io.bonat.customer_lib.widget.AlphaTextViewPressed
+                    android:id="@+id/collect_bt"
+                    android:layout_width="@dimen/_112sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@{Campaign.isLocked?@drawable/bg_radius_f7f7fa_20:@drawable/bg_radius_010101_20}"
+                    android:fontFamily="@font/mon_medium_bahij_semi"
+                    android:gravity="center"
+                    android:text="@string/collect"
+                    android:textColor="@{Campaign.isLocked?@color/color_7D7B78:@color/white}"
+                    android:textSize="@dimen/_10sdp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_E5E5E5"/>
+</LinearLayout>
+</layout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <cn.bingoogolapple.qrcode.zxing.ZXingView
+                android:id="@+id/zbarview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:qrcv_animTime="1000"
+                app:qrcv_borderSize="1dp"
+                app:qrcv_cornerColor="@color/color_010101"
+                app:qrcv_cornerLength="@dimen/_60sdp"
+                app:qrcv_cornerSize="3dp"
+                app:qrcv_isAutoZoom="true"
+                app:qrcv_isScanLineReverse="true"
+                app:qrcv_isShowDefaultScanLineDrawable="true"
+                app:qrcv_maskColor="#33FFFFFF"
+                app:qrcv_rectWidth="@dimen/_200sdp"
+                app:qrcv_topOffset="@dimen/_155sdp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_250sdp"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat_bahij_semibold"
+                    android:text="@string/scan_qr_code"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_15sdp"
+                    app:textAllCaps="true" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/montserrat_bahij_semibold"
+                    android:text="@string/and_register_new_visit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp">
+
+                <RelativeLayout
+                    android:id="@+id/ic_back_lay"
+                    style="@style/SelectableItemBackground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ic_arrow_back_"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_7sdp"
+                        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+                        tools:ignore="VectorDrawableCompat" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+</layout>

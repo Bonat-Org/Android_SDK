@@ -1,0 +1,26 @@
+<resources>
+    <string name="points">Points</string>
+    <string name="you_saved">you saved</string>
+    <string name="how_was_your_experience">How was your experience?</string>
+    <string name="rewards">Rewards</string>
+    <string name="wallet">Wallet</string>
+    <string name="collect">Collect</string>
+    <string name="point">Point</string>
+    <string name="expired_on">Expired on :</string>
+    <string name="describe_your_feedback">Describe your feedback</string>
+    <string name="skip">Skip</string>
+    <string name="send">Send</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="and_register_new_visit">and register new visit</string>
+    <string name="select_imoji">Please select emoji</string>
+    <string name="enable_flash">The environment is too dark, please turn on the flash</string>
+    <string name="no_rewards_yet">no rewards yet!</string>
+    <string name="try_another_time">Try another time</string>
+    <string name="wallet_empty">Wallet Empty</string>
+    <string name="get_reward_to_fill_your_wallet">Get reward to fill your wallet</string>
+    <string name="copy_text">Copy Text</string>
+    <string name="copy">Copied:</string>
+    <string name="reward_success_collect">Reward was successfully collected</string>
+    <string name="please_wait">Please wait</string>
+
+</resources>

@@ -1,0 +1,26 @@
+<resources>
+    <string name="points">نقطة</string>
+    <string name="you_saved">وفّرت</string>
+    <string name="how_was_your_experience">كيف كانت تجربتك؟</string>
+    <string name="rewards">المكافآت</string>
+    <string name="wallet">المحفظة</string>
+    <string name="collect">إستبدال</string>
+    <string name="point">نقطة</string>
+    <string name="expired_on">تنتهي في:</string>
+    <string name="describe_your_feedback">عبّر عن رأيك</string>
+    <string name="skip">تجاوز</string>
+    <string name="send">إرسال</string>
+    <string name="scan_qr_code">امسح الكود الان</string>
+    <string name="and_register_new_visit">و سجل زيارة جديدة</string>
+    <string name="select_imoji">الرجاء تحديد التقييم</string>
+    <string name="enable_flash">البيئة مظلمة للغاية ، يرجى تشغيل الفلاش</string>
+    <string name="no_rewards_yet">لا توجد مكفآت!</string>
+    <string name="try_another_time">حاول مرة أخرى</string>
+    <string name="wallet_empty">ليس لديك مكافآت!</string>
+    <string name="get_reward_to_fill_your_wallet">احصل على مكافأة لملء محفظتك</string>
+    <string name="copy_text">تم نسخ المحتوى</string>
+    <string name="copy">نسخ:</string>
+    <string name="reward_success_collect">تم جمع المكافأة بنجاح</string>
+    <string name="please_wait">Please wait</string>
+
+</resources>
