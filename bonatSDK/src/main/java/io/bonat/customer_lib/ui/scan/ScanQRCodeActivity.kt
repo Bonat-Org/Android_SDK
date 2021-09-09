@@ -8,12 +8,11 @@ import android.os.Build
 import android.os.Bundle
 import android.os.VibrationEffect
 import android.os.Vibrator
-import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import cn.bingoogolapple.qrcode.core.QRCodeView
 import com.permissionx.guolindev.PermissionX
-import io.bonat.customer_lib.LibApplication
+import io.bonat.customer_lib.BonatApplication
 import io.bonat.customer_lib.R
 import io.bonat.customer_lib.databinding.ActivityScanQrcodeBinding
 import io.bonat.customer_lib.ui.base.BaseActivity
@@ -33,7 +32,7 @@ class ScanQRCodeActivity : BaseActivity(), QRCodeView.Delegate {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val component = (application as LibApplication).component.activityComponentBuilder.build()
+        val component = (application as BonatApplication).component.activityComponentBuilder.build()
         component.inject(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_scan_qrcode)!!
         if (preferencesHelper!!.currentUser != null) {

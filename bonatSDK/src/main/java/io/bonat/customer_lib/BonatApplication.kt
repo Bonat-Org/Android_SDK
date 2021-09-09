@@ -13,7 +13,7 @@ import io.bonat.customer_lib.utils.Constant.REQUEST_URL
 import io.bonat.customer_lib.utils.Constant.URL
 
 
-class LibApplication : Application() {
+open class BonatApplication : Application() {
     lateinit var component: ApplicationComponent
     override fun onCreate() {
         super.onCreate()

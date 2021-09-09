@@ -4,7 +4,7 @@ import android.content.Context;
 
 
 import dagger.Component;
-import io.bonat.customer_lib.LibApplication;
+import io.bonat.customer_lib.BonatApplication;
 import io.bonat.customer_lib.data.DataManager;
 import io.bonat.customer_lib.data.local.PreferencesHelper;
 import io.bonat.customer_lib.di.module.ContextModule;
@@ -29,7 +29,7 @@ public interface ApplicationComponent {
     @ApplicationContext
     public Context getContext();
 
-    public void injectApplication(LibApplication myApplication);
+    public void injectApplication(BonatApplication myApplication);
 
 
     ActivityComponent.Builder getActivityComponentBuilder();

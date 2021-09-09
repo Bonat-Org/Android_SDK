@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.google.gson.Gson
-import io.bonat.customer_lib.LibApplication
+import io.bonat.customer_lib.BonatApplication
 import io.bonat.customer_lib.R
 import io.bonat.customer_lib.data.model.EventBusClass
 import io.bonat.customer_lib.data.model.Mercahnt
@@ -31,7 +31,7 @@ class MerchantActivity : BaseActivity(), MerchantView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val component = (application as LibApplication).component.activityComponentBuilder.build()
+        val component = (application as BonatApplication).component.activityComponentBuilder.build()
         component.inject(this)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_merchant)!!
         binding.listener = this

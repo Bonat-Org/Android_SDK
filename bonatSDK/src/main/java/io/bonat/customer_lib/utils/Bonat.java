@@ -40,6 +40,7 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
+                    Log.e("http3",""+result);
                     PreferencesHelper preferencesHelper = new PreferencesHelper(context);
                     if (result.get(DATA) instanceof JsonObject) {
                         MerchantSDK data = new Gson().fromJson(result.getAsJsonObject(DATA), MerchantSDK.class);
@@ -65,6 +66,8 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
+                    Log.e("http3",""+result);
+
                     Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
                     preferencesHelper.addUserSession(data);
                 });

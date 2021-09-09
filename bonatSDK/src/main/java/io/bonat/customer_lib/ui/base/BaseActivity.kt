@@ -3,11 +3,10 @@ package io.bonat.customer_lib.ui.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.app.easytable.ui.base.ViewModelFactory
-import io.bonat.customer_lib.LibApplication
+import io.bonat.customer_lib.BonatApplication
 import io.bonat.customer_lib.data.local.PreferencesHelper
 import io.bonat.customer_lib.utils.LocaleHelper
 
-import java.util.*
 import javax.inject.Inject
 
 open class BaseActivity : AppCompatActivity() {
@@ -24,7 +23,7 @@ open class BaseActivity : AppCompatActivity() {
     var localeHelper: LocaleHelper? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val component = (application as LibApplication).component.activityComponentBuilder.build()
+        val component = (application as BonatApplication).component.activityComponentBuilder.build()
         component.inject(this)
 
         super.onCreate(savedInstanceState)
