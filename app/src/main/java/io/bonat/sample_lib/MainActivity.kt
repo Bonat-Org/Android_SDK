@@ -19,11 +19,11 @@ class MainActivity : AppCompatActivity(), StartView {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)!!
 
-        disableView(binding.actionView, false)
-        binding.startBt.setOnClickListener {
+    //    disableView(binding.actionView, false)
+/*        binding.startBt.setOnClickListener {
             if (binding.merchantIdEt.text.toString() != "")
                 Bonat.initializeSDK(this@MainActivity, binding.merchantIdEt.text.toString(), this)
-        }
+        }*/
         binding.detailsBt.setOnClickListener {
             val intent = Intent(this@MainActivity, MerchantActivity::class.java)
             startActivity(intent)
