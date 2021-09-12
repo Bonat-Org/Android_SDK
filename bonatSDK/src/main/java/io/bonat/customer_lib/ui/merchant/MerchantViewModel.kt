@@ -24,23 +24,11 @@ class MerchantViewModel(private val dataManager: DataManager) : BaseViewModel() 
                 override fun onSubscribe(d: Disposable) {}
                 override fun onNext(response: BaseResponseObject<Mercahnt>) {
                     showProgress(false, activity)
-                  //  Log.e("rewardMenu",""+it.data.rewardMenu!!.size)
 
                     if (response.code == 0) {
                         merchantDataLiveData.postValue(response)
                     }
-                    /* if (userDataBaseResponse.status == 1) {
-                         favoriteMutableLiveData.postValue(userDataBaseResponse)
-                     }
-                     if (userDataBaseResponse.opereation == DELETE) {
-                         showAlert(
-                             activity,
-                             userDataBaseResponse.message,
-                             R.drawable.ic_baseline_cancel_24
-                         )
-                     } else {
-                         showSuccessAlert(activity, userDataBaseResponse.message)
-                     }*/
+
                 }
 
                 override fun onError(e: Throwable) {

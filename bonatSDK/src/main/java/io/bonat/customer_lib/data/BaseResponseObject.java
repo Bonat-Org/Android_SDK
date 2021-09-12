@@ -23,9 +23,6 @@ public class BaseResponseObject<T> implements Parcelable {
     @SerializedName("data")
     @Expose
     private T data;
-    @SerializedName("data")
-    @Expose
-    private ArrayList<T> dataArray;
     @SerializedName("data_v2")
     @Expose
     private T dataV2;
@@ -110,13 +107,5 @@ public class BaseResponseObject<T> implements Parcelable {
 
     public void setDataV2(T dataV2) {
         this.dataV2 = dataV2;
-    }
-
-    public ArrayList<T> getDataArray() {
-        return dataArray;
-    }
-
-    public void setDataArray(ArrayList<T> dataArray) {
-        this.dataArray = dataArray;
     }
 }
