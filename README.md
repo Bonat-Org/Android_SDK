@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/Bonat-Org/Android_SDK.svg)](https://jitpack.io/#Bonat-Org/Android_SDK)
+
 # BonatSDK
 ## Description
 Bonat easily gets you rewarded at different businesses around you.
