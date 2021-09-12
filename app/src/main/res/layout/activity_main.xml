@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -14,42 +14,41 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/merchant_id_et"
+                android:id="@+id/customer_phone_et"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/textarea_background"
+                android:gravity="center"
+                android:hint="05/xxxxxxxx"
+                android:inputType="number"
+                android:maxLength="10"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                 android:gravity="center"
-                android:maxLength="4"
-                android:visibility="gone"
-                android:hint="merchant id"
-                 android:inputType="number"
                 android:textColor="@color/color_010101"
-                android:textColorHint="@color/color_7D7B78"
-                android:background="@drawable/textarea_background"
-                android:layout_marginTop="10dp"/>
+                android:textColorHint="@color/color_7D7B78" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/start_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:visibility="gone"
-
-                android:text="Start" />
+                android:text="Login" />
 
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/action_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center">
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/details_bt"
                 android:layout_width="wrap_content"

@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".BonatApplication"
         android:usesCleartextTraffic="true">
         <activity android:name=".ui.scan.ScanQRCodeActivity" />
         <activity android:name=".ui.merchant.MerchantActivity" />

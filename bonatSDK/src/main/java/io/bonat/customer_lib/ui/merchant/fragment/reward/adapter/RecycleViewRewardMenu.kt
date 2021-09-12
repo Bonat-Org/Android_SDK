@@ -41,7 +41,8 @@ class RecycleViewRewardMenu(private var context: Activity, private var rewardVie
     override fun onBindViewHolder(holder: RewardMenuHolder, position: Int) {
         holder.listItemRewardViewBinding.campaign = listOfCampaign!![position]
         holder.listItemRewardViewBinding.collectBt.setOnClickListener {
-            rewardView.collectReward(listOfCampaign!![position].idCampaign.toString())
+          //  if (!listOfCampaign!![position].isLocked)
+                rewardView.collectReward(listOfCampaign!![position].idCampaign.toString())
         }
 
     }

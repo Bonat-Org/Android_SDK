@@ -11,18 +11,20 @@ import io.bonat.customer_lib.di.module.RetrofitModule
 import io.bonat.customer_lib.utils.Bonat
 import io.bonat.customer_lib.utils.Constant.REQUEST_URL
 import io.bonat.customer_lib.utils.Constant.URL
+import javax.crypto.SecretKey
 
 
 open class BonatApplication : Application() {
     lateinit var component: ApplicationComponent
     override fun onCreate() {
         super.onCreate()
-     //   Bonat.initializeSDK(this, "1000", "2f4992dc88f66336", Mode.DEVELOPMENT)
-        component = DaggerApplicationComponent.builder().contextModule(ContextModule(this))
-            .retrofitModule(RetrofitModule(this, REQUEST_URL)).build()
-        Ion.getDefault(this).conscryptMiddleware.enable(false);
-
 
     }
 
+    fun initBonatSDK(merchantID: String, secretKey: String, mode:Mode) {
+        Bonat.initializeSDK(this, merchantID, secretKey, mode)
+        component = DaggerApplicationComponent.builder().contextModule(ContextModule(this))
+            .retrofitModule(RetrofitModule(this, REQUEST_URL)).build()
+        Ion.getDefault(this).conscryptMiddleware.enable(false)
+    }
 }

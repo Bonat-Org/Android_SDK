@@ -1,5 +1,6 @@
 package io.bonat.customer_lib.utils
 
+import android.util.Log
 import io.bonat.customer_lib.data.model.Mode
 
 object Constant {
@@ -57,6 +58,8 @@ object Constant {
 
     @JvmStatic
     fun retUrlHost(mode: Mode) {
+        Log.e("http300",""+mode)
+
         when (mode) {
             Mode.DEVELOPMENT -> {
                 REQUEST_URL =  DEVELOPMENT_HOST_NAME + VERSION_2
@@ -73,6 +76,8 @@ object Constant {
         }
         REQUEST_SDK_AUTH=REQUEST_URL_V3+ SDK_AUTH
         SDK_AUTH_CUSTOMER=REQUEST_URL_V3+ CUSTOMER_INFO
+        Log.e("http30",""+REQUEST_SDK_AUTH)
+
     }
 
 }
