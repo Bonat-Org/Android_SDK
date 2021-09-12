@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/Bonat-Org/Android_SDK.svg)](https://jitpack.io/#Bonat-Org/Android_SDK)
+
 # BonatSDK
 ## Description
 Bonat easily gets you rewarded at different businesses around you.
@@ -18,7 +20,7 @@ Add it in your **root build.gradle** at the end of repositories:
   Add it in your **app build.gradle** :
   ```
 	dependencies {
-	        implementation 'com.github.Bonat-Org:Android_SDK:1.0.1'
+	        implementation 'com.github.Bonat-Org:Android_SDK:x.y.z'
 	}
 ```
 ## Setup SDK
