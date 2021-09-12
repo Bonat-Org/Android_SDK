@@ -7,6 +7,6 @@ public class SampleApp extends BonatApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        initBonatSDK("merchantID", "secretKey", Mode.DEVELOPMENT);
+        initBonatSDK("1000", "2f4992dc88f66336", Mode.DEVELOPMENT);
     }
 }
