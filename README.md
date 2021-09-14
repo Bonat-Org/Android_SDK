@@ -49,6 +49,11 @@ note you need *camera permission*
    ``` xml
 <uses-permission android:name="android.permission.CAMERA" />
    ```
+## Note
+1. SDK support `<RTL >`
+2. SDK support `<Arabic and English>`
+  
+  
 ![Sample](https://github.com/Bonat-Org/Android_SDK/tree/master/video/20210912-075157.gif)
 
 ## License
