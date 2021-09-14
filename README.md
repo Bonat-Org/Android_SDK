@@ -50,7 +50,7 @@ note you need *camera permission*
 <uses-permission android:name="android.permission.CAMERA" />
    ```
 ## Note
-1. SDK support `<RTL >`
+1. SDK support `<RTL>`
 2. SDK support `<Arabic and English>`
   
   
