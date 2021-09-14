@@ -110,15 +110,15 @@ The BONAT Mobile SDK requires the following permissions to work properly:
 1. To display Bonat user points/rewards call below: **MerchantActivity**:
 
 ```kotlin
-  val intent = Intent(this@MainActivity, MerchantActivity::class.java)
-   startActivity(intent)
+val intent = Intent(this@MainActivity, MerchantActivity::class.java)
+startActivity(intent)
 ```
 
 2. To scan the QRCode and register the user visit, call below: **ScanQRCodeActivity**,
 
 ```kotlin
- val intent = Intent(this@MainActivity, ScanQRCodeActivity::class.java)
-  startActivity(intent)
+val intent = Intent(this@MainActivity, ScanQRCodeActivity::class.java)
+startActivity(intent)
 ```
 
 ![Sample](https://github.com/Bonat-Org/Android_SDK/tree/master/video/20210912-075157.gif)
