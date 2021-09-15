@@ -78,10 +78,10 @@ allprojects {
 3. Extend you application from **BonatApplication**. After that you need to call **initBonatSDK** function as below:
 
 ```kotlin
-initBonatSDK("merchantID", "secretKey", Mode.DEVELOPMENT);
+initBonatSDK("merchantID", "secretKey", Mode.PRODUCTION,"language");
 ```
 
-where `<Mode>` can be `<PRODUCTION, STAGING>`
+where `<Mode>` can be `<PRODUCTION, STAGING>` and `<language`> can be `<ar, en>`
 
 **Note: Merchant credentiails will be shared by BONAT team.**
 
@@ -96,16 +96,7 @@ The BONAT Mobile SDK requires the following permissions to work properly:
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-## Workflow Description:
-
-1. The Merchant’s application initiates the BONAT Mobile SDK and passes the parameters to the BONAT Mobile SDK.
-2. The BONAT Mobile SDK starts a secure connection and passes the received parameters to the BONAT API to be validated.
-3. The BONAT API returns the validation response.
-4. The BONAT Mobile SDK submits the user data to the BONAT API to process/fetch loyality information.
-5. The BONAT Mobile SDK display the loyality information.
-6. Once the BONAT Mobile SDK is initialized, The Merchant can allow users to scan the QRCode in BONAT tablets to collect points.
-
-## Call the BONAT Mobile SDK:
+## Features:
 
 1. To display Bonat user points/rewards call below: **MerchantActivity**:
 
@@ -120,5 +111,15 @@ startActivity(intent)
 val intent = Intent(this@MainActivity, ScanQRCodeActivity::class.java)
 startActivity(intent)
 ```
+## Workflow Description:
+
+1. The Merchant’s application initiates the BONAT Mobile SDK and passes the parameters to the BONAT Mobile SDK.
+2. The BONAT Mobile SDK starts a secure connection and passes the received parameters to the BONAT API to be validated.
+3. The BONAT API returns the validation response.
+4. The BONAT Mobile SDK submits the user data to the BONAT API to process/fetch loyality information.
+5. The BONAT Mobile SDK display the loyality information.
+6. Once the BONAT Mobile SDK is initialized, The Merchant can allow users to scan the QRCode in BONAT tablets to collect points.
+
+
 
 ![Sample](https://github.com/Bonat-Org/Android_SDK/tree/master/video/20210912-075157.gif)
