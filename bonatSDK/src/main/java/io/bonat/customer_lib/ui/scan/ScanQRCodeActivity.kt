@@ -98,7 +98,7 @@ class ScanQRCodeActivity : BaseActivity(), QRCodeView.Delegate {
         allParameter[DATA] = dynamicLink.getQueryParameter(DATA)!!
         allParameter[SDK] = "true"
 
-        scanQRCodeViewModel.updateOrder(this, allParameter)
+        scanQRCodeViewModel.updateOrder2(this, allParameter)
 
     }
 

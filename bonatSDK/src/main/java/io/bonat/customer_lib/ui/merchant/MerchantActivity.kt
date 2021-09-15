@@ -1,7 +1,10 @@
 package io.bonat.customer_lib.ui.merchant
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
@@ -46,6 +49,12 @@ class MerchantActivity : BaseActivity(), MerchantView {
         merchantViewModel =
             ViewModelProvider(this, viewModelFactory).get(MerchantViewModel::class.java)
         binding.refreshLayout.isNestedScrollingEnabled = false
+
+        for (i in 0 until binding.tabLayout.tabCount) {
+            @SuppressLint("InflateParams") val tv = LayoutInflater.from(this).inflate(R.layout.tab_text, null) as TextView
+            binding.tabLayout.getTabAt(i)!!.customView = tv
+        }
+
         val viewPagerReward = ViewPagerReward(supportFragmentManager)
         viewPagerReward.addFragment(RewardFragment(), getString(R.string.rewards))
         viewPagerReward.addFragment(WalletFragment(), getString(R.string.wallet))

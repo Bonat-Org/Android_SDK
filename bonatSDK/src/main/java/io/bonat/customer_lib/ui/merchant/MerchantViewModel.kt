@@ -32,7 +32,7 @@ class MerchantViewModel(private val dataManager: DataManager) : BaseViewModel() 
                 }
 
                 override fun onError(e: Throwable) {
-                    showAlert(
+                     showAlert(
                         activity,
                         e.message!!,
                         R.drawable.ic_baseline_cancel_24

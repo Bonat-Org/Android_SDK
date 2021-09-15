@@ -12,6 +12,7 @@ import io.bonat.customer_lib.data.model.Mercahnt;
 import io.bonat.customer_lib.data.model.UpdateOrder;
 import io.bonat.customer_lib.data.model.Wallet;
 import io.reactivex.Observable;
+import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -43,6 +44,10 @@ public interface APIInterface {
     @FormUrlEncoded
     @POST
     Observable<BaseResponseArray<String>> updateOrder(@Url String url, @FieldMap HashMap<String, String> data);
+
+    @FormUrlEncoded
+    @POST
+    Call<BaseResponseArray<String>> updateOrder2(@Url String url, @FieldMap HashMap<String, String> data);
 
     @FormUrlEncoded
     @POST(POINT_REDEMPTION)

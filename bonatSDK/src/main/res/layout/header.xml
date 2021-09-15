@@ -19,7 +19,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:fontFamily="@font/poppins_medium"
+                android:fontFamily="@font/poppins_medium_bahij_semi"
                 android:gravity="center"
                 android:paddingTop="@dimen/_15sdp"
                 android:paddingBottom="@dimen/_15sdp"

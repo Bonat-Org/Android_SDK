@@ -21,8 +21,8 @@ open class BonatApplication : Application() {
 
     }
 
-    fun initBonatSDK(merchantID: String, secretKey: String, mode:Mode) {
-        Bonat.initializeSDK(this, merchantID, secretKey, mode)
+    fun initBonatSDK(merchantID: String, secretKey: String, mode: Mode, language: String) {
+        Bonat.initializeSDK(this, merchantID, secretKey, mode, language)
         component = DaggerApplicationComponent.builder().contextModule(ContextModule(this))
             .retrofitModule(RetrofitModule(this, REQUEST_URL)).build()
         Ion.getDefault(this).conscryptMiddleware.enable(false)

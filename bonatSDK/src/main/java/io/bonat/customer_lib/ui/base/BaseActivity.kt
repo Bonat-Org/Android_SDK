@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.easytable.ui.base.ViewModelFactory
 import io.bonat.customer_lib.BonatApplication
 import io.bonat.customer_lib.data.local.PreferencesHelper
+import io.bonat.customer_lib.utils.Constant.LANGUAGE
 import io.bonat.customer_lib.utils.LocaleHelper
+import io.bonat.customer_lib.utils.ViewUtils
+import java.util.*
 
 import javax.inject.Inject
 
@@ -27,9 +30,11 @@ open class BaseActivity : AppCompatActivity() {
         component.inject(this)
 
         super.onCreate(savedInstanceState)
-//       / ToolUtils.changeLanguage(this,preferencesHelper!!.getStringWithKey(LANGUAGE, Locale.getDefault().language)!!)
+        ViewUtils.changeLanguage(
+            this,
+            preferencesHelper!!.getStringWithKey(LANGUAGE, Locale.getDefault().language)!!
+        )
     }
-
 
 
     fun reCreateBase() {

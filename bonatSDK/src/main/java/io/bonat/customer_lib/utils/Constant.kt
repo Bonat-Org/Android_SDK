@@ -50,11 +50,13 @@ object Constant {
     const val SDK = "sdk"
     const val AUTHORIZATION = "Authorization"
     const val SECRET = "secret"
+    const val ERRORS = "errors"
     const val PHONE_NUMBER = "phoneNumber"
     const val OS = "os"
     const val FORMAT_YYYY_MM_DD_T_HH_MM_SS = "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'"
     const val FORMAT_MMM_D_YYYY_H_MM_A = "MMM d, yyyy h:mm a"
     const val ANDROID = "android"
+    const val LANGUAGE = "language"
 
     @JvmStatic
     fun retUrlHost(mode: Mode) {

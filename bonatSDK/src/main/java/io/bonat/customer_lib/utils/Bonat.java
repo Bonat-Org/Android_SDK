@@ -6,7 +6,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
- import com.koushikdutta.ion.Ion;
+import com.koushikdutta.ion.Ion;
+
 import io.bonat.customer_lib.StartView;
 import io.bonat.customer_lib.data.local.PreferencesHelper;
 import io.bonat.customer_lib.data.model.Customer;
@@ -16,7 +17,9 @@ import io.bonat.customer_lib.data.model.Mode;
 import static io.bonat.customer_lib.utils.Constant.ANDROID;
 import static io.bonat.customer_lib.utils.Constant.AUTHORIZATION;
 import static io.bonat.customer_lib.utils.Constant.DATA;
+import static io.bonat.customer_lib.utils.Constant.ERRORS;
 import static io.bonat.customer_lib.utils.Constant.ID_MERCHANT;
+import static io.bonat.customer_lib.utils.Constant.LANGUAGE;
 import static io.bonat.customer_lib.utils.Constant.OS;
 import static io.bonat.customer_lib.utils.Constant.PHONE_NUMBER;
 import static io.bonat.customer_lib.utils.Constant.REQUEST_SDK_AUTH;
@@ -26,7 +29,10 @@ import static io.bonat.customer_lib.utils.Constant.SECRET;
 
 public class Bonat {
 
-    public static void initializeSDK(Context context, String merchantId, String secretKey, Mode mode) {
+    public static void initializeSDK(Context context, String merchantId, String secretKey, Mode mode, String language) {
+        PreferencesHelper preferencesHelper = new PreferencesHelper(context);
+        preferencesHelper.addWithKey(LANGUAGE, language);
+
         Constant.retUrlHost(mode);
 
         JsonObject json = new JsonObject();
@@ -37,7 +43,6 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
-                    PreferencesHelper preferencesHelper = new PreferencesHelper(context);
                     if (result.get(DATA) instanceof JsonObject) {
                         MerchantSDK data = new Gson().fromJson(result.getAsJsonObject(DATA), MerchantSDK.class);
                         preferencesHelper.addWithKey(SDK_TOKEN, data.getSdk_token());
@@ -49,7 +54,7 @@ public class Bonat {
 
     }
 
-    public static void getCustomerInfo(Context context, String phoneNumber,StartView startView) {
+    public static void getCustomerInfo(Context context, String phoneNumber, StartView startView) {
         PreferencesHelper preferencesHelper = new PreferencesHelper(context);
         JsonObject json = new JsonObject();
         json.addProperty(PHONE_NUMBER, phoneNumber);
@@ -61,9 +66,14 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
-                    Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
-                    preferencesHelper.addUserSession(data);
-                    startView.finishSDK();
+                    if (result.get(DATA) instanceof JsonObject) {
+                        Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
+                        preferencesHelper.addUserSession(data);
+                        startView.finishSDK();
+                    } else {
+                        Toast.makeText(context, result.getAsJsonArray(ERRORS).get(0).toString(), Toast.LENGTH_SHORT).show();
+                    }
+
                 });
     }
 
@@ -79,8 +89,12 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
-                    Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
-                    preferencesHelper.addUserSession(data);
+                    if (result.get(DATA) instanceof JsonObject) {
+                        Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
+                        preferencesHelper.addUserSession(data);
+                    } else {
+                        Toast.makeText(context, result.getAsJsonArray(ERRORS).get(0).toString(), Toast.LENGTH_SHORT).show();
+                    }
                 });
     }
     // public static void initializeSDK(Context context,String merchantId,String secret) {

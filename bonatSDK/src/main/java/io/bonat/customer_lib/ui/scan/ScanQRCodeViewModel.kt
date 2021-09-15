@@ -15,6 +15,9 @@ import io.reactivex.Observer
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ScanQRCodeViewModel(private val dataManager: DataManager) : BaseViewModel() {
     var scanQRCodeDataLiveData = MutableLiveData<BaseResponseArray<String>>()
@@ -52,5 +55,28 @@ class ScanQRCodeViewModel(private val dataManager: DataManager) : BaseViewModel(
                     showProgress(false, activity)
                 }
             })
+    }
+
+    fun updateOrder2(activity: Activity?, data: HashMap<String, String>) { // lat and lng
+        showProgress(true, activity!!)
+        dataManager.updateOrder2(Constant.URL_FIREBASE, data)
+            .enqueue(object : Callback<BaseResponseArray<String>> {
+                override fun onResponse(
+                    call: Call<BaseResponseArray<String>>,
+                    response: Response<BaseResponseArray<String>>
+                ) {
+                    showProgress(false, activity)
+                    if (response.isSuccessful) {
+                        scanQRCodeDataLiveData.postValue(response.body())
+                    } else {
+                        ViewUtils.handleErrorResponse(response.errorBody()!!, activity)
+                    }
+                }
+
+                override fun onFailure(call: Call<BaseResponseArray<String>>, t: Throwable?) {
+                    showProgress(false, activity)
+                }
+            })
+
     }
 }
