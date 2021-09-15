@@ -8,28 +8,15 @@ BONAT easily gets your customers rewarded at different businesses around you.
 It's the most convenient rewards app in the region, you can buy coupons and gift cards through the app and use them whenever you visit our partner businesses.
 All you need is your phone to get your unique QRCode whenever you visit the shop scan it and we will count your visits until you get rewarded.
 
-## About this Document
+## BONAT Mobile SDK
 
-This document describes our BONAT Mobile SDK (for Android) and includes information on how to integrate it with the Merchant's Mobile Application.
+The BONAT Mobile SDK allows Merchants to securely integrate the loyality functions. Instead of the traditional, time-consuming, and complex way of physical loyality cards, This can be used completly using a better enhanced through scanning a QRCode through BONAT SDK. This gives the Merchant/User a better and smooth user-experience using native applications.
 
 ## Supported Android Platforms
 
 The BONAT Mobile SDK supports all devices running Android 4.1.x (API level 21). _**Lollipop**_ or higher are supported.
 
 _This release supports Android Lollipop API 21._
-
-## Localization
-
-The BONAT Mobile SDK supports both English and Arabic languages.
-
-## Screen Orientation
-
-Portrait is the only orientation supported within the BONAT Mobile SDK.
-
-## BONAT Mobile SDK
-
-The BONAT Mobile SDK allows Merchants to securely integrate the loyality functions. Instead of the traditional, time-consuming, and complex way of physical loyality cards, This can be used completly using a better enhanced through scanning a QRCode through BONAT SDK. This gives the Merchant/User a better and smooth user-experience using native applications.
-
 ## Integrate the BONAT Mobile SDK
 
 To start using the **BONAT SDK**, you can proceed using the folowing instructions:
@@ -71,8 +58,16 @@ The BONAT Mobile SDK requires the following permissions to work properly:
 
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.INTERNET" />
 ```
 
+## Localization
+
+The BONAT Mobile SDK supports both English and Arabic languages.
+
+## Screen Orientation
+
+Portrait is the only orientation supported within the BONAT Mobile SDK.
 ## Features:
 
 1. To display Bonat user points/rewards call below: **MerchantActivity**:
