@@ -2,21 +2,6 @@
 
 # Bonat Mobile SDK for Android
 
-## Copyright Statement
-
-All rights reserved. No part of this document may be reproduced in any form or by any means or used to make any derivative such as
-translation, transformation, or adaptation without the prior written permission from BONAT Corporation.
-
-## Trademark
-
-2019-2021 BONAT ©, all rights reserved. Contents are subject to change without prior notice.
-
-## Contact Us
-
-integrations@bonat.io
-
-www.bonat.io
-
 ## About BONAT
 
 BONAT easily gets your customers rewarded at different businesses around you.
@@ -123,3 +108,19 @@ startActivity(intent)
 
 
 ![Sample](https://github.com/Bonat-Org/Android_SDK/tree/master/video/20210912-075157.gif)
+
+
+## Copyright Statement
+
+All rights reserved. No part of this document may be reproduced in any form or by any means or used to make any derivative such as
+translation, transformation, or adaptation without the prior written permission from BONAT Corporation.
+
+## Trademark
+
+2019-2021 BONAT ©, all rights reserved. Contents are subject to change without prior notice.
+
+## Contact Us
+
+integrations@bonat.io
+
+www.bonat.io
