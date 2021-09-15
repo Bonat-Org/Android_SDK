@@ -12,10 +12,6 @@ All you need is your phone to get your unique QRCode whenever you visit the shop
 
 This document describes our BONAT Mobile SDK (for Android) and includes information on how to integrate it with the Merchant's Mobile Application.
 
-## Supported Platforms
-
-The first version of the solution is available only for the Android OS.
-
 ## Supported Android Platforms
 
 The BONAT Mobile SDK supports all devices running Android 4.1.x (API level 21). _**Lollipop**_ or higher are supported.
