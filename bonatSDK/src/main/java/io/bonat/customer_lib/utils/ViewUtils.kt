@@ -61,7 +61,7 @@ class ViewUtils {
         }
 
         fun showAlert(mContext: Activity?, message: String?, icon: Int) {
-            Alerter.create(mContext)
+            Alerter.create(mContext!!)
                 .setText(message!!)
                 .setIcon(icon)
                 .setIconColorFilter(0)
@@ -72,7 +72,7 @@ class ViewUtils {
 
         @JvmStatic
         fun showSuccessAlert(mContext: Activity?, message: String?) {
-            Alerter.create(mContext)
+            Alerter.create(mContext!!)
                 .setText(message!!)
                 .setIcon(R.drawable.ic_success)
                 .setIconColorFilter(0)
