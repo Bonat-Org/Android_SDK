@@ -66,13 +66,14 @@ public class Bonat {
                 .setJsonObjectBody(json)
                 .asJsonObject()
                 .setCallback((e, result) -> {
-                    if (result.get(DATA) instanceof JsonObject) {
-                        Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
-                        preferencesHelper.addUserSession(data);
-                        startView.finishSDK();
-                    } else {
-                        Toast.makeText(context, result.getAsJsonArray(ERRORS).get(0).toString(), Toast.LENGTH_SHORT).show();
-                    }
+                    if (result != null && result.get(DATA) != null)
+                        if (result.get(DATA) instanceof JsonObject) {
+                            Customer data = new Gson().fromJson(result.getAsJsonObject(DATA), Customer.class);
+                            preferencesHelper.addUserSession(data);
+                            startView.finishSDK();
+                        } else {
+                            Toast.makeText(context, result.getAsJsonArray(ERRORS).get(0).toString(), Toast.LENGTH_SHORT).show();
+                        }
 
                 });
     }

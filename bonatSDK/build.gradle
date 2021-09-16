@@ -79,7 +79,7 @@ dependencies {
     kapt 'com.google.dagger:dagger-android-processor:2.27'
 
     //Rx
-    implementation "io.reactivex.rxjava2:rxjava:2.2.11"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.19"
     implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
     implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.6.2'
     compileOnly 'javax.annotation:jsr250-api:1.0'
