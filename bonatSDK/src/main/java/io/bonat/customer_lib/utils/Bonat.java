@@ -51,7 +51,6 @@ public class Bonat {
                     }
 
                 });
-
     }
 
     public static void getCustomerInfo(Context context, String phoneNumber, StartView startView) {
